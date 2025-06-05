@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload & Download</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label, input[type="file"], button, a.download-link {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .download-link, .home-button {
+      text-decoration: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .home-button {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover, .download-link:hover, .home-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Go Back to Home Page Button -->
+  <div style="text-align: center;">
+    <a href="index.html" class="home-button">Go Back to Home Page</a>
+  </div>
+
+  <div class="container">
+    <h2>Upload & Download Files</h2>
+
+    <!-- File Upload Section -->
+    <form method="post" enctype="multipart/form-data">
+      <!-- Label for upload -->
+      <label for="fileUpload">Choose a file to upload:</label>
+      <!-- File input -->
+      <input type="file" id="fileUpload" name="fileUpload" required>
+      <!-- Upload button (requires backend to actually save the file) -->
+      <button type="submit">Upload File</button>
+    </form>
+
+    <!-- File Download Section -->
+    <!-- Replace with the actual file you want users to download -->
+    <a href="example-file.pdf" download class="download-link">Download Example File</a>
+  </div>
+
+</body>
+</html>

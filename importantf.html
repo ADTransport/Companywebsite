@@ -1,50 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>File Upload & Download</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alpha transportation Portal</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px 20px;
       color: #333;
     }
 
     .container {
-      max-width: 500px;
+      max-width: 700px;
       margin: auto;
-      padding: 30px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .downloads, .upload-form {
+      margin-top: 30px;
     }
 
     h2 {
-      text-align: center;
-    }
-
-    label, input[type="file"], button, a.download-link {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .download-link, .home-button {
-      text-decoration: none;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    .home-button {
+      font-size: 1.5rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
       margin-bottom: 20px;
     }
 
-    button {
+    .download-list a {
+      display: block;
+      margin: 10px 0;
+      background-color: #4CAF50;
+      color: white;
       padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .download-list a:hover {
+      background-color: #45a049;
+    }
+
+    form input[type="file"] {
+      display: block;
+      margin: 20px auto;
+    }
+
+    form button {
+      display: block;
+      margin: auto;
+      padding: 10px 20px;
       background-color: #2196F3;
       color: white;
       border: none;
@@ -52,34 +77,54 @@
       cursor: pointer;
     }
 
-    button:hover, .download-link:hover, .home-button:hover {
-      opacity: 0.9;
+    form button:hover {
+      background-color: #1976D2;
+    }
+
+    .home-link {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #2196F3;
+      font-weight: bold;
+    }
+
+    .home-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Go Back to Home Page Button -->
-  <div style="text-align: center;">
-    <a href="index.html" class="home-button">Go Back to Home Page</a>
-  </div>
-
   <div class="container">
-    <h2>Upload & Download Files</h2>
+    <h1>Alpha transportation Portal</h1>
+    <p>Welcome to our logistics resource hub. Download key forms or upload your documents securely.</p>
 
-    <!-- File Upload Section -->
-    <form method="post" enctype="multipart/form-data">
-      <!-- Label for upload -->
-      <label for="fileUpload">Choose a file to upload:</label>
-      <!-- File input -->
-      <input type="file" id="fileUpload" name="fileUpload" required>
-      <!-- Upload button (requires backend to actually save the file) -->
-      <button type="submit">Upload File</button>
-    </form>
+    <!-- Downloads Section -->
+    <div class="downloads">
+      <h2>Available Downloads</h2>
+      <div class="download-list">
+        <a href="downloads/rate-sheet.pdf" download>📄 Rate Sheet</a>
+        <a href="downloads/w9-form.pdf" download>📄 W-9 Form</a>
+        <a href="downloads/insurance-certificate.pdf" download>📄 Insurance Certificate</a>
+        <a href="downloads/bol-template.docx" download>📄 Bill of Lading Template (DOCX)</a>
+        <a href="downloads/safety-compliance.pdf" download>📄 Safety & Compliance Policy</a>
+      </div>
+    </div>
 
-    <!-- File Download Section -->
-    <!-- Replace with the actual file you want users to download -->
-    <a href="example-file.pdf" download class="download-link">Download Example File</a>
+    <!-- Upload Section -->
+    <div class="upload-form">
+      <h2>Upload Your Documents</h2>
+      <form method="post" action="/upload" enctype="multipart/form-data">
+        <label for="fileUpload">Choose a document to upload (PDF, DOCX, JPG):</label>
+        <input type="file" id="fileUpload" name="fileUpload" required />
+        <button type="submit">Upload File</button>
+      </form>
+      <p style="text-align:center; font-size: 0.9rem; color: #888;">Need to upload BOLs, contracts, or invoices? Use the form above.</p>
+    </div>
+
+    <a href="index.html" class="home-link">← Return to Home Page</a>
   </div>
 
 </body>

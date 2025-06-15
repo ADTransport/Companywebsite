@@ -1,0 +1,310 @@
+/* dimension.css - Custom theme for Dimension Logistics */
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Header and Navigation */
+#header {
+  background: #007bff;
+  padding: 20px;
+  text-align: center;
+}
+
+#header .logo {
+  color: #ffffff;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+#nav {
+  background: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+#nav .links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#nav .links li {
+  display: inline;
+  margin: 0 15px;
+}
+
+#nav .links li a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+#nav .links li a:hover,
+#nav .links li.active a {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Intro Section */
+#intro {
+  background: #007bff;
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#intro .logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+#intro h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+#intro p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#intro .actions .button {
+  background: #ffffff;
+  color: #007bff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#intro .actions .button:hover {
+  background: #0056b3;
+  color: #ffffff;
+}
+
+/* Main Content */
+#main {
+  padding: 60px 20px;
+}
+
+.spotlights {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.spotlights section {
+  flex: 1;
+  max-width: 500px;
+  min-width: 280px;
+}
+
+.spotlights .image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.spotlights .content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.spotlights .content .inner {
+  text-align: center;
+}
+
+.spotlights .content .inner h2 {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.spotlights .content .inner p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 20px 0;
+}
+
+.spotlights .content .inner ul {
+  list-style: none;
+  padding: 0;
+  color: #555;
+}
+
+.spotlights .content .inner ul li {
+  margin: 10px 0;
+}
+
+.spotlights .content .inner ul li .icon {
+  margin-right: 10px;
+}
+
+.spotlights .content .inner .actions .button {
+  background: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.spotlights .content .inner .actions .button:hover {
+  background: #0056b3;
+}
+
+/* Testimonial Section */
+.wrapper.style1.align-center {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.wrapper.style1.align-center blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.wrapper.style1.align-center p {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+/* Footer - New Professional Style */
+#footer.footer-pro {
+  background: #007bff;
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
+  font-size: 1rem;
+}
+
+#footer.footer-pro .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-column p {
+  line-height: 1.5;
+  color: #dce6fc;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: #dce6fc;
+}
+
+.footer-list li i {
+  margin-right: 10px;
+  min-width: 18px;
+  text-align: center;
+  color: #a9c8ff;
+}
+
+.footer-list li a {
+  color: #dce6fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-list li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-icons li a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: #0056b3;
+  color: white;
+  border-radius: 50%;
+  line-height: 36px;
+  text-align: center;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.footer-icons li a:hover {
+  background: #003d80;
+  color: #dce6fc;
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #c3d3ff;
+  border-top: 1px solid #0056b3;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .spotlights {
+    flex-direction: column;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #nav .links li {
+    display: block;
+    margin: 10px 0;
+  }
+}

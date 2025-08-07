@@ -175,11 +175,7 @@
     <div class="downloads">
       <h2>Available Downloads</h2>
       <div class="download-list">
-        <a href="downloads/rate-sheet.pdf" download>📄 Rate Sheet</a>
-        <a href="downloads/w9-form.pdf" download>📄 W-9 Form</a>
-        <a href="downloads/insurance-certificate.pdf" download>📄 Insurance Certificate</a>
-        <a href="downloads/bol-template.docx" download>📄 Bill of Lading Template (DOCX)</a>
-        <a href="downloads/safety-compliance.pdf" download>📄 Safety & Compliance Policy</a>
+        <a href="https://www.dropbox.com/scl/fi/1k8hoxeazv0f7n24n46e8/Driver-Application-2025.pdf?rlkey=y5e6qdu3n00is8qpoezdibu57&st=dhf3k1yc&dl=1" download>📄Driver application</a>
       </div>
     </div>
 
@@ -191,32 +187,28 @@
       </div>
     </div>
 
-    <!-- Modal Popup for Upload -->
-<div id="uploadModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" id="closeModalBtn">&times;</span>
-    <h3>Upload Documents</h3>
-    <form id="uploadForm" name="upload-form" method="POST" action="/" data-netlify="true" enctype="multipart/form-data">
-      <label for="email">Your Email Address:</label>
-      <input type="email" id="email" name="email" required placeholder="you@example.com" />
+    <!-- Modal Popup -->
+    <div id="uploadModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h3>Upload Documents</h3>
+        <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+          <label for="email">Your Email Address:</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" placeholder="Enter a message..."></textarea>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Enter a message..."></textarea>
 
-      <label for="fileUpload">Upload Files (PDF, DOCX, JPG):</label>
-      <input type="file" id="fileUpload" name="fileUpload[]" multiple required accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+          <label for="fileUpload">Upload Files (PDF, DOCX, JPG):</label>
+          <input type="file" id="fileUpload" name="fileUpload[]" multiple required accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
 
-      <!-- Hidden field for redirect (optional) -->
-      <input type="hidden" name="_redirect" value="/thank-you.html">
-
-      <div class="modal-actions">
-        <button type="submit" class="send-btn">Send</button>
-        <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+          <div class="modal-actions">
+            <button type="submit" class="send-btn">Send</button>
+            <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
-
+    </div>
 
     <a href="index.html" class="home-link">← Return to Home Page</a>
   </div>
@@ -246,3 +238,4 @@
   </script>
 </body>
 </html>
+re

@@ -12,4 +12,6 @@ the assets folder holds the code about the design of the website and the image f
 
 The layout of each page is done in each HTML file and i should have added good comments to help the person reading understand.
 
+Please contact Farres with any question you may have. Email: farresamrharwork@gmail.com
+
 ELEMENTS FILE IS USED FOR TESTING AND IS NOT SHOWN ON THE WEBSITE. PLEASE DON'T WORRY ABOUT IT UNLESS YOU WANT TO SEE HOW THINGS WORK

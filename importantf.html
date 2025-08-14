@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alpha Transportation Portal</title>
   <style>
+    /* (Styles left untouched — your styling is clean and functional) */
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -12,7 +13,6 @@
       padding: 40px 20px;
       color: #333;
     }
-
     .container {
       max-width: 700px;
       margin: auto;
@@ -21,30 +21,15 @@
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
-
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-
-    p {
-      text-align: center;
-      font-size: 1rem;
-      margin-bottom: 30px;
-      color: #666;
-    }
-
-    .downloads, .upload-form {
-      margin-top: 30px;
-    }
-
+    h1 { text-align: center; color: #2c3e50; }
+    p { text-align: center; font-size: 1rem; margin-bottom: 30px; color: #666; }
+    .downloads, .upload-form { margin-top: 30px; }
     h2 {
       font-size: 1.5rem;
       border-bottom: 2px solid #ccc;
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
-
     .download-list a {
       display: block;
       margin: 10px 0;
@@ -56,11 +41,7 @@
       text-align: center;
       transition: background-color 0.3s;
     }
-
-    .download-list a:hover {
-      background-color: #45a049;
-    }
-
+    .download-list a:hover { background-color: #45a049; }
     .home-link {
       display: block;
       text-align: center;
@@ -69,18 +50,8 @@
       color: #2196F3;
       font-weight: bold;
     }
-
-    .home-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Center the button */
-    .center-btn {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    /* Make the upload button larger and more styled */
+    .home-link:hover { text-decoration: underline; }
+    .center-btn { text-align: center; margin-top: 20px; }
     .modal-trigger {
       font-size: 1.2rem;
       padding: 15px 30px;
@@ -91,12 +62,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .modal-trigger:hover {
-      background-color: #45a049;
-    }
-
-    /* Modal Styles */
+    .modal-trigger:hover { background-color: #45a049; }
     .modal {
       display: none;
       position: fixed;
@@ -107,7 +73,6 @@
       background-color: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(5px);
     }
-
     .modal-content {
       background-color: #fff;
       margin: 10% auto;
@@ -118,7 +83,6 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
       position: relative;
     }
-
     .modal-content input,
     .modal-content textarea {
       width: 100%;
@@ -127,11 +91,7 @@
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-
-    .modal-actions {
-      text-align: right;
-    }
-
+    .modal-actions { text-align: right; }
     .send-btn {
       background-color: #2196F3;
       color: white;
@@ -141,7 +101,6 @@
       margin-right: 10px;
       cursor: pointer;
     }
-
     .cancel-btn {
       background-color: #f44336;
       color: white;
@@ -150,12 +109,7 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
-    .send-btn:hover,
-    .cancel-btn:hover {
-      opacity: 0.9;
-    }
-
+    .send-btn:hover, .cancel-btn:hover { opacity: 0.9; }
     .close-btn {
       position: absolute;
       top: 15px;
@@ -167,6 +121,13 @@
   </style>
 </head>
 <body>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("n47bnyjjQoxx98rrF"); // Public key
+  </script>
+
   <div class="container">
     <h1>Alpha Transportation Portal</h1>
     <p>Welcome to our logistics resource hub. Download key forms or upload your documents securely.</p>
@@ -175,7 +136,9 @@
     <div class="downloads">
       <h2>Available Downloads</h2>
       <div class="download-list">
-        <a href="https://www.dropbox.com/scl/fi/1k8hoxeazv0f7n24n46e8/Driver-Application-2025.pdf?rlkey=y5e6qdu3n00is8qpoezdibu57&st=dhf3k1yc&dl=1" download>📄Driver application</a>
+        <a href="https://www.dropbox.com/scl/fi/1k8hoxeazv0f7n24n46e8/Driver-Application-2025.pdf?rlkey=y5e6qdu3n00is8qpoezdibu57&st=dhf3k1yc&dl=1" download>
+          📄 Driver Application
+        </a>
       </div>
     </div>
 
@@ -192,15 +155,17 @@
       <div class="modal-content">
         <span class="close-btn" id="closeModalBtn">&times;</span>
         <h3>Upload Documents</h3>
-        <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+
+        <!-- FORM FIXED BELOW -->
+        <form id="uploadForm" enctype="multipart/form-data">
           <label for="email">Your Email Address:</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <input type="email" id="email" name="user_email" required placeholder="you@example.com" />
 
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="4" placeholder="Enter a message..."></textarea>
 
-          <label for="fileUpload">Upload Files (PDF, DOCX, JPG):</label>
-          <input type="file" id="fileUpload" name="fileUpload[]" multiple required accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
+          <label for="fileUpload">Upload Files (PDF, DOCX, JPG) under 10 MB:</label>
+          <input type="file" id="fileUpload" name="file" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" />
 
           <div class="modal-actions">
             <button type="submit" class="send-btn">Send</button>
@@ -213,6 +178,7 @@
     <a href="index.html" class="home-link">← Return to Home Page</a>
   </div>
 
+  <!-- Modal and EmailJS Logic -->
   <script>
     const modal = document.getElementById("uploadModal");
     const openBtn = document.getElementById("openModalBtn");
@@ -235,7 +201,22 @@
         document.body.style.overflow = "auto";
       }
     };
+
+    // EmailJS submission logic
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_9kvl2xv', 'template_2a1s12t', this)
+        .then(function(response) {
+          alert('Your document has been sent successfully!');
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+          document.getElementById('uploadForm').reset();
+        }, function(error) {
+          alert('Failed to send. Please try again.');
+          console.error('EmailJS error:', error);
+        });
+    });
   </script>
 </body>
 </html>
-re

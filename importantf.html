@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alpha Transportation Portal</title>
   <style>
-    /* (Styles left untouched — your styling is clean and functional) */
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -207,7 +206,7 @@
     document.getElementById('uploadForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      emailjs.sendForm('service_9kvl2xv', 'template_2a1s12t', this)
+      emailjs.sendForm('service_9kvl2xv', 'template_bw2ewdg', this)
         .then(function(response) {
           alert('Your document has been sent successfully!');
           modal.style.display = "none";

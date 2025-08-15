@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Alpha Transportation Portal</title>
   <style>
+    /* Your CSS (unchanged) */
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
@@ -121,35 +122,32 @@
 </head>
 <body>
 
-  <!-- EmailJS SDK -->
-  <script type="module">
-  import emailjs from 'https://cdn.emailjs.com/sdk/4.6.2/email.min.js';
+  <!-- ✅ EmailJS SDK (UMD Version) -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // Init after SDK is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      emailjs.init("n47bnyjjQoxx98rrF");
 
-  emailjs.init("n47bnyjjQoxx98rrF");
+      const form = document.getElementById('uploadForm');
+      const modal = document.getElementById("uploadModal");
 
-  // Wait for the DOM to load
-  window.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('uploadForm');
-    const modal = document.getElementById("uploadModal");
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      emailjs.sendForm('service_9kvl2xv', 'template_bw2ewdg', this)
-        .then(function(response) {
-          alert('Your document has been sent successfully!');
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-          form.reset();
-        }, function(error) {
-          alert('Failed to send. Please try again.');
-          console.error('EmailJS error:', error);
-        });
+        emailjs.sendForm('service_9kvl2xv', 'template_bw2ewdg', this)
+          .then(function(response) {
+            alert('Your document has been sent successfully!');
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+            form.reset();
+          }, function(error) {
+            alert('Failed to send. Please try again.');
+            console.error('EmailJS error:', error);
+          });
+      });
     });
-  });
-</script>
-
-
+  </script>
 
   <div class="container">
     <h1>Alpha Transportation Portal</h1>
@@ -179,29 +177,28 @@
         <span class="close-btn" id="closeModalBtn">&times;</span>
         <h3>Upload Documents</h3>
 
-        <!-- FORM FIXED BELOW -->
-       <form id="uploadForm" enctype="multipart/form-data">
-  <label for="email">Your Email Address:</label>
-  <input type="email" id="email" name="user_email" required placeholder="you@example.com" />
+        <form id="uploadForm" enctype="multipart/form-data">
+          <label for="email">Your Email Address:</label>
+          <input type="email" id="email" name="user_email" required placeholder="you@example.com" />
 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" rows="4" placeholder="Enter a message..."></textarea>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" placeholder="Enter a message..."></textarea>
 
-  <label for="fileUpload">Link to Documents (Google Docs, Dropbox, etc):</label>
-  <textarea id="fileLink" name="file_link" rows="1" placeholder="https://docs.google.com/..."></textarea>
+          <label for="fileUpload">Link to Documents (Google Docs, Dropbox, etc):</label>
+          <textarea id="fileLink" name="file_link" rows="1" placeholder="https://docs.google.com/..."></textarea>
 
-  <div class="modal-actions">
-    <button type="submit" class="send-btn">Send</button>
-    <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
-  </div>
-</form>
+          <div class="modal-actions">
+            <button type="submit" class="send-btn">Send</button>
+            <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+          </div>
+        </form>
       </div>
     </div>
 
     <a href="index.html" class="home-link">← Return to Home Page</a>
   </div>
 
-  <!-- Modal and EmailJS Logic -->
+  <!-- Modal Logic -->
   <script>
     const modal = document.getElementById("uploadModal");
     const openBtn = document.getElementById("openModalBtn");
@@ -224,7 +221,6 @@
         document.body.style.overflow = "auto";
       }
     };
-
   </script>
 </body>
 </html>

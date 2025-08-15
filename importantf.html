@@ -122,10 +122,27 @@
 <body>
 
   <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    emailjs.init("n47bnyjjQoxx98rrF"); // Public key
-  </script>
+  <script type="module">
+  import emailjs from 'https://cdn.emailjs.com/sdk/4.6.2/email.min.js';
+  emailjs.init("n47bnyjjQoxx98rrF");
+  //forum submit area in JS module
+  document.getElementById('uploadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_9kvl2xv', 'template_bw2ewdg', this)
+      .then(function(response) {
+        alert('Your document has been sent successfully!');
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+        document.getElementById('uploadForm').reset();
+      }, function(error) {
+        alert('Failed to send. Please try again.');
+        console.error('EmailJS error:', error);
+      });
+  });
+</script>
+
+
 
   <div class="container">
     <h1>Alpha Transportation Portal</h1>
@@ -201,21 +218,6 @@
       }
     };
 
-    // EmailJS submission logic
-    document.getElementById('uploadForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      emailjs.sendForm('service_9kvl2xv', 'template_bw2ewdg', this)
-        .then(function(response) {
-          alert('Your document has been sent successfully!');
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-          document.getElementById('uploadForm').reset();
-        }, function(error) {
-          alert('Failed to send. Please try again.');
-          console.error('EmailJS error:', error);
-        });
-    });
   </script>
 </body>
 </html>

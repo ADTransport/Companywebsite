@@ -135,7 +135,8 @@
       form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        emailjs.sendForm('service_9kvl2xv', 'template_bw2ewdg', this)
+        // Use your Contact Us email template here
+        emailjs.sendForm('service_9kvl2xv', 'template_bgtvmor', this)
           .then(function(response) {
             alert('Your document has been sent successfully!');
             modal.style.display = "none";

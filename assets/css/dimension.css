@@ -12,7 +12,7 @@ body {
 
 /* Header and Navigation */
 #header {
-  background: #007bff;
+  background: #35b961;
   padding: 20px;
   text-align: center;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 #nav .links li a {
-  color: #007bff;
+  color: #35b961;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
@@ -50,12 +50,12 @@ body {
 #nav .links li a:hover,
 #nav .links li.active a {
   text-decoration: underline;
-  color: #0056b3;
+  color: #1e793c;
 }
 
 /* Intro Section */
 #intro {
-  background: #007bff;
+  background: #35b961;
   color: #ffffff;
   padding: 60px 20px;
   text-align: center;
@@ -78,7 +78,7 @@ body {
 
 #intro .actions .button {
   background: #ffffff;
-  color: #007bff;
+  color: #35b961;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -88,7 +88,7 @@ body {
 }
 
 #intro .actions .button:hover {
-  background: #0056b3;
+  background: #1e793c;
   color: #ffffff;
 }
 
@@ -131,7 +131,7 @@ body {
 
 .spotlights .content .inner h2 {
   font-size: 2rem;
-  color: #007bff;
+  color: #35b961;
 }
 
 .spotlights .content .inner p {
@@ -155,7 +155,7 @@ body {
 }
 
 .spotlights .content .inner .actions .button {
-  background: #007bff;
+  background: #35b961;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -166,7 +166,7 @@ body {
 }
 
 .spotlights .content .inner .actions .button:hover {
-  background: #0056b3;
+  background: #1e793c;
 }
 
 /* Testimonial Section */
@@ -190,7 +190,7 @@ body {
 
 /* Footer - New Professional Style */
 #footer.footer-pro {
-  background: #007bff;
+  background: #35b961;
   color: #ffffff;
   padding: 40px 20px 20px 20px;
   font-size: 1rem;
@@ -268,7 +268,7 @@ body {
   display: inline-block;
   width: 36px;
   height: 36px;
-  background: #0056b3;
+  background: #1e793c;
   color: white;
   border-radius: 50%;
   line-height: 36px;
@@ -287,7 +287,7 @@ body {
   text-align: center;
   font-size: 0.9rem;
   color: #c3d3ff;
-  border-top: 1px solid #0056b3;
+  border-top: 1px solid #1e793c;
   padding-top: 15px;
   margin-top: 15px;
 }

@@ -7,6 +7,26 @@
   <link rel="stylesheet" href="assets/css/dimension.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* Logo Styling */
+    .logo-small {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+    .logo-long {
+      max-height: 60px;
+    }
+    #header .logo img {
+      vertical-align: middle;
+    }
+    #header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body class="is-preload">
   <div id="wrapper" class="fade-in">
@@ -14,7 +34,7 @@
     <!-- Intro Section -->
     <div id="intro" class="blue-bg white-text">
       <div class="inner">
-        <img src="images/dimension-logo.png" alt="Dimension Logistics Logo" class="logo" />
+        <img src="images/DlogoSMALL.png" alt="Dimension Logistics Logo" class="logo-small" />
         <h1>Dimension Logistics</h1>
         <p>Nationwide Freight & Transportation Solutions</p>
         <ul class="actions">
@@ -25,10 +45,12 @@
 
     <!-- Header -->
     <header id="header">
-      <a href="dimension.html" class="logo">Dimension Logistics</a>
+      <a href="dimension.html" class="logo">
+        <img src="images/DlogoLONG.png" alt="Dimension Logistics Long Logo" class="logo-long" />
+      </a>
     </header>
 
-    <!-- Navigation Menu (Links to nav the website!)-->
+    <!-- Navigation Menu -->
     <nav id="nav">
       <ul class="links">
         <li class="active"><a href="dimension.html">Home</a></li>
@@ -45,9 +67,6 @@
       <!-- Services Section -->
       <section id="services" class="spotlights">
         <section>
-          <a href="#" class="image">
-            <img src="images/fleet.jpg" alt="Our Fleet" />
-          </a>
           <div class="content">
             <div class="inner">
               <header class="major">
@@ -59,9 +78,6 @@
                 <li class="icon solid fa-map-marked-alt"><strong>Nationwide Coverage</strong></li>
                 <li class="icon solid fa-clock"><strong>24/7 Tracking</strong></li>
                 <li class="icon solid fa-user-friends"><strong>Dedicated Drivers</strong></li>
-              </ul>
-              <ul class="actions">
-                <li><a href="https://www.dimensionlogistics.com" target="_blank" class="button primary">Visit Full Site</a></li>
               </ul>
             </div>
           </div>
@@ -106,7 +122,6 @@
             <h3>Quick Links</h3>
             <ul class="footer-list">
               <li><a href="index.html">Alpha Home</a></li>
-              <li><a href="https://www.dimensionlogistics.com" target="_blank">Official Site</a></li>
             </ul>
           </div>
 
